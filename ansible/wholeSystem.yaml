@@ -1,10 +1,17 @@
-#  - hosts: dbserver
-#    vars_files:
-#     - host_vars/dbserver.yaml
-#    gather_facts: false
-#    become: yes
-#    roles:
-#       - role: db_config
+# Team number:67
+# city: Melbourne
+# Mengfeifei Zhang 877122
+# Mohnish Panduranga Devadiga 1041730 
+# Hangqi Yu 953852 
+# Yi Li 917940
+# Yijian Zhang 806676
+
+
+
+
+
+
+
 
  - hosts: harvester1
    vars_files:
