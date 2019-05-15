@@ -1,0 +1,14 @@
+
+from tweepy import OAuthHandler
+
+
+CONSUMER_KEY = '8f458hQbBLA9cGin6x70QZllX'
+CONSUMER_SECRET = 'F4W0Q2jeSbvurc6pNn99XgvzWHLxIvLX6xcG6U0uBngfPshVXP'
+ACCESS_TOKEN = '1121661131913699330-BWZFxN3lBp88SXtISQc54LQvKDqNHz'
+ACCESS_TOKEN_SECRET = 'Pop81fqpMGi32rXTNkR3hGA7ntBkNaAiDzrE2vwVBLaJt'
+
+
+def getAuth(self):
+    auth = OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+    auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+    return auth

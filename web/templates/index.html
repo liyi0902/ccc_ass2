@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="/static/css/mislider.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!-- banner -->
+    <div class="banner">
+        <!-- header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
+                <h1>
+                    <a class="navbar-brand text-white" href="index.html">
+                      Comp90024
+                    </a>
+                </h1>
+                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-lg-auto text-center">
+                        <li class="nav-item active  mr-3 mt-lg-0 mt-3">
+                            <a class="nav-link" href="index.html">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  mr-3 mt-lg-0 mt-3">
+                            <a class="nav-link" href="{{ url_for('s1') }}">Scenario 1</a>
+
+                        </li>
+						<li class="nav-item  mr-3 mt-lg-0 mt-3">
+                            <a class="nav-link" href="{{ url_for('s2') }}">Scenario 2</a>
+                        </li>
+                        <li class="nav-item  mr-3 mt-lg-0 mt-3">
+                            <a class="nav-link" href="{{ url_for('s3') }}">Scenario 3</a>
+                        </li>
+                        <li class="nav-item  mr-3 mt-lg-0 mt-3">
+                            <a class="nav-link" href="{{ url_for('s4') }}">Scenario 4</a>
+                        </li>
+                    </ul>
+                </div>
+			</nav>
+        </header>
+        <!-- //header -->
+        <div class="container">
+            <!-- banner-text -->
+            <div class="banner-text">
+                <div class="slider-info">
+                    <h3>The Deadly Sins</h3>
+				</div>
+            </div>
+			<div class="banner-top pb-5">
+                <div class="row slider-bottom">
+                    <div class="slider-bottom-lft">
+						<h4>Mengfeifei Zhang</h4>
+                        <h4>Mohnish Panduranga Devadiga</h4>
+                        <h4>Yi Li</h4>
+                        <h4>Hangqi Yu</h4>
+                        <h4>Yijian Zhang</h4>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/jquery-2.2.3.min.js"></script>
+    <script src="/static/js/SmoothScroll.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+     <!-- D3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+
+</body>
+
+</html>
