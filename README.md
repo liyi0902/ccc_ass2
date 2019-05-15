@@ -1,4 +1,4 @@
-# ccc_ass2
+# Cluster and Cloud Computing Assignment 2
 ## This is an assignment of the lecture Cluster and Cloud Computing of the University of Melbourne
 ### The group members are: 
 1. Yi Li
