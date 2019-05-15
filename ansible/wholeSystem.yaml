@@ -1,0 +1,24 @@
+#  - hosts: dbserver
+#    vars_files:
+#     - host_vars/dbserver.yaml
+#    gather_facts: false
+#    become: yes
+#    roles:
+#       - role: db_config
+
+ - hosts: harvester1
+   vars_files:
+    - host_vars/harvester1.yaml
+   gather_facts: false
+   become: yes
+   roles:
+      - role: harvestor_config
+      - role: harvestor1
+
+ - hosts: webserver
+   vars_files:
+    - host_vars/webserver.yaml
+   become: yes
+   gather_facts: true
+   roles:
+    - role: web_config

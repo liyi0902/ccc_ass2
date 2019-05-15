@@ -1,0 +1,86 @@
+
+
+- name: enable the internet
+  copy: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+    - { src: '../../environment_config/environment', dest: '/etc/environment' }
+
+
+
+
+- name: Install pip
+  become: yes
+  apt:
+    name: ['python-pip']
+    state: latest
+    update_cache: yes
+
+
+
+
+
+
+
+
+- name: Install openstacksdk
+  become: yes
+  shell: pip2 install  openstacksdk
+
+
+
+- name: enable the Apache CouchDB package repository
+  shell: echo "deb https://apache.bintray.com/couchdb-deb bionic main" \
+    | sudo tee -a /etc/apt/sources.list
+  
+- name: installing the Apache CouchDB packages
+  shell: curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc \
+    | sudo apt-key add - 
+ 
+- name: install required packages
+  become: yes
+  shell: apt-get install -y couchdb
+  
+- name: install unzip
+  become: yes
+  shell: apt-get install -y unzip
+
+- name: install dependencies
+  pip: name={{ item }} 
+  with_items: 
+    - couchdb
+    - flask
+    - flask-jsonpify
+    - flask-sqlalchemy
+    - flask-restful
+    - tweepy
+    - geopy
+
+
+
+- name: install system dependency
+  copy:
+      src=../../../../web
+      dest=/home/ubuntu/
+      force=yes
+
+- name: copy the couchdb configfile
+  copy: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+    - { src: '../../environment_config/local.ini', dest: '/etc/couchdb/local.ini' }
+
+- name: restart the couchdb to make it accessible to public ip
+  shell: sudo systemctl restart couchdb
+
+- name: config some bugs 
+  shell: |
+    rm -rf /usr/lib/python2.7/dist-packages/OpenSSL
+    rm -rf /usr/lib/python2.7/dist-packages/pyOpenSSL-0.15.1.egg-info
+    sudo pip install pyopenssl
+
+- name: start retrieving data in backend
+  shell:  "(python /home/ubuntu/web/Retrieval.py >/dev/null 2>&1 &)"
+  
+
+- name: start websites
+  shell: python /home/ubuntu/web/run.py
+

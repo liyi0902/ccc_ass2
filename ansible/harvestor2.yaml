@@ -1,0 +1,9 @@
+
+ - hosts: harvester2
+   vars_files:
+    - host_vars/harvester2.yaml
+   gather_facts: false
+   become: yes
+   roles:
+      - role: harvestor_config
+      - role: harvestor2
