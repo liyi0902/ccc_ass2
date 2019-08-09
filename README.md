@@ -4,7 +4,7 @@
 1. Yi Li
 2. Yijian Zhang(806676) 
 3. Mohnish Devadiga 
-4. Mengfeifei Zhange 
+4. Mengfeifei Zhang
 5. Hangqi Yu
 
 # Video of deployment and working
